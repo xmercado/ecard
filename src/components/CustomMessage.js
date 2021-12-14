@@ -18,17 +18,26 @@ export default function CustomMessage({
     
   const verifyInput = (event) => {
       event.preventDefault();
-      if (!(Email.length > 0) || !(/\S/.test(Email))
-          || !(Greeting.length > 0) || !(/\S/.test(Greeting))
-          || !(Body.length > 0) || !(/\S/.test(Body))
-          || !(Closing.length > 0) || !(/\S/.test(Closing))) {
-            setShowAlert(true);
-            setAlertMessage('Form cannot be empty.');
+      if (!(Email.length > 0) || !(/\S/.test(Email))) {
+        setShowAlert(true);
+        setAlertMessage('Please enter an email.');
+      }
+      else if (!(Greeting.length > 0) || !(/\S/.test(Greeting))) {
+        setShowAlert(true);
+        setAlertMessage('Please enter a greeting.');
+      }
+      else if (!(Body.length > 0) || !(/\S/.test(Body))) {
+        setShowAlert(true);
+        setAlertMessage('Please enter a body.');
+      }
+      else if (!(Closing.length > 0) || !(/\S/.test(Closing))) {
+        setShowAlert(true);
+        setAlertMessage('Please enter a closing.');
       }
       else {
-            setAlertMessage('');
-            setShowAlert(false);
-            setIsValidCard(true);
+        setAlertMessage('');
+        setShowAlert(false);
+        setIsValidCard(true);
       }
   }
 
@@ -105,12 +114,12 @@ export default function CustomMessage({
             </div>
             <Button
               className='Button'
-              id='preview-card'
+              id='verify-card'
               type='submit'
               onClick={(event) => verifyInput(event)}
               variant='contained'
             >
-              Preview
+              Verify
             </Button>
           
           {
