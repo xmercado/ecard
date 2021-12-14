@@ -1,26 +1,34 @@
+import React from 'react';
 import winter from '../images/winter.jpg';
+import { Button} from '@mui/material';
 
-export default function GreetingCard({ Greeting, Body, Closing, setCanCustomize }) {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={winter} alt="winter" />
+export default function GreetingCard({
+    Greeting,
+    Body,
+    Closing,
+    setCanCustomize
+}) {
+
+    return (
+    <div>
+        <img className='CardImage' src={winter} alt='winter' />
         <p>
-          {Greeting}
+            {Greeting}
         </p>
         <p>
-          {Body}
+            {Body}
         </p>
         <p>
-          {Closing}
+            {Closing}
         </p>
-        <button
-          className="App-link"
-          onClick={() => setCanCustomize(true)}
+        <Button
+            className='Button'
+            id='reshare-card'
+            onClick={() => setCanCustomize(true)}
+            variant='contained'
         >
-          Reshare This Card
-        </button>
-      </header>
+            Reshare This Card
+        </Button>
     </div>
   );
 }
