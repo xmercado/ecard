@@ -49,11 +49,11 @@ export default function CustomMessage({
 
   const sendCard = () => {
     let mailto = `mailto:${Email}`;
-    mailto += '?subject=greeting ecard';
-    mailto += '&body=You have a card greeting!';
+    mailto += '?subject=Greeting Card';
+    mailto += '&body=You have a new greeting card.';
     mailto += '%0D%0A%0D%0A';
     mailto += 'Here is your card';
-    mailto += '%0D%0A%';
+    mailto += '%0D%0A';
 
     let url = 'https://xmercado.github.io/ecard';
     url += `?greeting=${encodeURIComponent(Greeting)}`;
