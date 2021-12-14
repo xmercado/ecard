@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, Alert, AlertTitle } from '@mui/material';
+import { TextField, Button, Alert } from '@mui/material';
 import GreetingCard from './GreetingCard';
 
 export default function CustomMessage({ 
@@ -14,36 +14,41 @@ export default function CustomMessage({
   const [Email, setEmail] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
   const [showAlert, setShowAlert] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [isValidCard, setIsValidCard] = useState(false);
     
   const verifyInput = (event) => {
       event.preventDefault();
       if (!(Email.length > 0) || !(/\S/.test(Email))) {
+        setShowSuccess(false);
         setShowAlert(true);
         setAlertMessage('Please enter an email.');
       }
       else if (!(Greeting.length > 0) || !(/\S/.test(Greeting))) {
+        setShowSuccess(false);
         setShowAlert(true);
         setAlertMessage('Please enter a greeting.');
       }
       else if (!(Body.length > 0) || !(/\S/.test(Body))) {
+        setShowSuccess(false);
         setShowAlert(true);
         setAlertMessage('Please enter a body.');
       }
       else if (!(Closing.length > 0) || !(/\S/.test(Closing))) {
+        setShowSuccess(false);
         setShowAlert(true);
         setAlertMessage('Please enter a closing.');
       }
       else {
-        setAlertMessage('');
+        setShowSuccess(true);
         setShowAlert(false);
+        setAlertMessage('Preview and send your card!');
         setIsValidCard(true);
       }
   }
 
   const sendCard = () => {
-    let mailto = 'mailto: ';
-    mailto += Email;
+    let mailto = `mailto:${Email}`;
     mailto += '?subject=greeting ecard';
     mailto += '&body=You have a card greeting!';
     mailto += '%0D%0A%0D%0A';
@@ -121,20 +126,23 @@ export default function CustomMessage({
             >
               Verify
             </Button>
-          
           {
             showAlert &&
-            <Alert 
-                style={{margin: 10}}
-                severity='error' 
-            >
-                <AlertTitle>
-                    <strong>
-                        Invalid Input
-                    </strong>
-                </AlertTitle>
+              <Alert 
+                  style={{margin: 10}}
+                  severity='error' 
+              >
                 {alertMessage}
-            </Alert>
+              </Alert>
+          }
+          {
+            showSuccess &&
+              <Alert 
+                style={{margin: 10}}
+                severity='success' 
+              >
+                {alertMessage}
+              </Alert>
           }
             </div>
       </form>
@@ -153,7 +161,7 @@ export default function CustomMessage({
           <Button
             className='Button'
             id='send-card'
-            onClick={() => sendCard()}
+            onClick={sendCard}
             variant='contained'
             color='secondary'
           >
