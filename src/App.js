@@ -4,9 +4,10 @@ import GreetingCard from './components/GreetingCard';
 import CustomMessage from './components/CustomMessage';
 
 function App() {
-  const [Greeting, setGreeting] = useState('Greeting');
-  const [Body, setBody] = useState('Body');
-  const [Closing, setClosing] = useState('Closing');
+  const query = new URLSearchParams(window.location.search);
+  const [Greeting, setGreeting] = useState(query.get('greeting') || 'Hello friend,');
+  const [Body, setBody] = useState(query.get('body') || 'Have a good one!');
+  const [Closing, setClosing] = useState(query.get('closing') || 'From your friend');
   const [canCustomize, setCanCustomize] = useState(false);
 
   return (
