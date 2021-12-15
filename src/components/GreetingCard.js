@@ -12,13 +12,13 @@ export default function GreetingCard({
     return (
     <div>
         <img className='CardImage' src={winter} alt='winter' />
-        <p>
+        <p className='Cursive'>
             {Greeting}
         </p>
-        <p>
+        <p className='Cursive'>
             {Body}
         </p>
-        <p>
+        <p className='Cursive'>
             {Closing}
         </p>
         <Button

@@ -8,6 +8,11 @@
   height: 100vh;
 }
 
+.Cursive {
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 35px;
+}
+
 .RowContainer {
   display: flex;
   flex-direction: row;
