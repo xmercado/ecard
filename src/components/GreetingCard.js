@@ -21,14 +21,16 @@ export default function GreetingCard({
         <p className='Cursive'>
             {Closing}
         </p>
-        <Button
-            className='Button'
-            id='reshare-card'
-            onClick={() => setCanCustomize(true)}
-            variant='contained'
-        >
-            Reshare This Card
-        </Button>
+        <div>
+            <Button
+                className='Button'
+                id='reshare-card'
+                onClick={() => setCanCustomize(true)}
+                variant='contained'
+            >
+                Reshare This Card
+            </Button>
+        </div>
     </div>
   );
 }

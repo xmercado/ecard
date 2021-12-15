@@ -67,7 +67,7 @@ export default function CustomMessage({
   }
 
   return (
-    <div className='RowContainer'>
+    <div className='CustomizeContainer'>
       <form className='CustomizeMessage'>
         <div>
           <h2>
@@ -117,15 +117,17 @@ export default function CustomMessage({
                     variant='filled'
                 />
             </div>
-            <Button
-              className='Button'
-              id='verify-card'
-              type='submit'
-              onClick={(event) => verifyInput(event)}
-              variant='contained'
-            >
-              Verify
-            </Button>
+            <div className='Button'>
+              <Button
+                className='Button'
+                id='verify-card'
+                type='submit'
+                onClick={(event) => verifyInput(event)}
+                variant='contained'
+              >
+                Submit
+              </Button>
+            </div>
           {
             showAlert &&
               <Alert 
@@ -158,24 +160,28 @@ export default function CustomMessage({
         />
         { isValidCard
           ?
-          <Button
-            className='Button'
-            id='send-card'
-            onClick={sendCard}
-            variant='contained'
-            color='secondary'
-          >
-            Send
-          </Button>
+          <div className='Button'>
+            <Button
+              className='Button'
+              id='send-card'
+              onClick={sendCard}
+              variant='contained'
+              color='secondary'
+            >
+              Send
+            </Button>
+          </div>
           :
-          <Button
-            className='Button'
-            id='send-card'
-            variant='outlined'
-            color='secondary'
-          >
-            Send
-          </Button>
+          <div className='Button'>
+            <Button
+              className='Button'
+              id='send-card'
+              variant='outlined'
+              color='secondary'
+            >
+              Send
+            </Button>
+          </div>
         }
       </div>
     </div>
