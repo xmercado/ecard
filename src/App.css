@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,6 +14,13 @@
 
 .FormInput {
   color: white;
+}
+
+.ChangeImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .CardImage {

@@ -11,7 +11,7 @@ const theme = createTheme({
       main: '#D3D3D3',
      },
      secondary: {
-      main: '#FFFFFF',
+      main: '#000000',
      },
   },
 });
