@@ -71,7 +71,7 @@ export default function CustomMessage({
 
     let url = 'https://xmercado.github.io/ecard';
     url += `?img=${encodeURIComponent(customImage)}`;
-    url += `?greeting=${encodeURIComponent(Greeting)}`;
+    url += `&greeting=${encodeURIComponent(Greeting)}`;
     url += `&body=${encodeURIComponent(Body)}`;
     url += `&closing=${encodeURIComponent(Closing)}`;
 
