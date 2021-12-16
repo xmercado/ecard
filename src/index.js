@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline} from '@mui/material';
 
 const theme = createTheme({
   palette: {
@@ -13,12 +13,16 @@ const theme = createTheme({
      secondary: {
       main: '#000000',
      },
+     background: {
+       default: '#000000',
+     }
   },
 });
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <App />
     </ThemeProvider>
   </React.StrictMode>,
