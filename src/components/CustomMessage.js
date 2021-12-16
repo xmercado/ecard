@@ -1,11 +1,26 @@
 import React, { useState } from 'react';
-import { TextField, Button, Alert } from '@mui/material';
+import {
+  TextField,
+  Button,
+  Alert,
+  Select,
+  MenuItem,
+  FormHelperText
+} from '@mui/material';
 import GreetingCard from './GreetingCard';
+import winter from '../images/winter.jpg';
+import spring from '../images/spring.jpg';
+import summer from '../images/summer.jpg';
+import fall from '../images/fall.jpg';
 
 export default function CustomMessage({ 
+  customImage,
+  imageIndex,
   Greeting,
   Body,
   Closing,
+  setCustomImage,
+  setImageIndex,
   setGreeting,
   setBody,
   setClosing,
@@ -56,6 +71,7 @@ export default function CustomMessage({
     mailto += '%0D%0A';
 
     let url = 'https://xmercado.github.io/ecard';
+    url += `?img=${encodeURIComponent(customImage)}`;
     url += `?greeting=${encodeURIComponent(Greeting)}`;
     url += `&body=${encodeURIComponent(Body)}`;
     url += `&closing=${encodeURIComponent(Closing)}`;
@@ -117,6 +133,22 @@ export default function CustomMessage({
                     variant='filled'
                 />
             </div>
+            <div className='ChangeImage'>
+              <FormHelperText>Change Image</FormHelperText>
+              <Select
+                id='change-image'
+                label='Change Image'
+                value={customImage}
+                onChange={(e) => setCustomImage(e.target.value)}
+                variant='filled'
+                autoWidth
+              >
+                <MenuItem value={spring}>Spring</MenuItem>
+                <MenuItem value={summer}>Summer</MenuItem>
+                <MenuItem value={fall}>Fall</MenuItem>
+                <MenuItem value={winter}>Winter</MenuItem>
+              </Select>
+            </div>
             <div className='Button'>
               <Button
                 className='Button'
@@ -153,9 +185,12 @@ export default function CustomMessage({
           Preview
         </h2>
         <GreetingCard
+          customImage={customImage}
+          imageIndex={imageIndex}
           Greeting={Greeting}
           Body={Body}
           Closing={Closing}
+          setCustomImage={setCustomImage}
           setCanCustomize={setCanCustomize}
         />
         { isValidCard

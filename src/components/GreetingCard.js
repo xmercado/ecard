@@ -1,8 +1,8 @@
 import React from 'react';
-import winter from '../images/winter.jpg';
 import { Button} from '@mui/material';
 
 export default function GreetingCard({
+    customImage,
     Greeting,
     Body,
     Closing,
@@ -11,7 +11,7 @@ export default function GreetingCard({
 
     return (
     <div>
-        <img className='CardImage' src={winter} alt='winter' />
+        <img className='CardImage' src={customImage} alt='card' />
         <p className='Cursive'>
             {Greeting}
         </p>
