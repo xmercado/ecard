@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ecard/static/css/main.df60f3b5.chunk.css",
+    "main.js": "/ecard/static/js/main.7f1e9564.chunk.js",
+    "main.js.map": "/ecard/static/js/main.7f1e9564.chunk.js.map",
+    "runtime-main.js": "/ecard/static/js/runtime-main.f0886261.js",
+    "runtime-main.js.map": "/ecard/static/js/runtime-main.f0886261.js.map",
+    "static/js/2.f79d7c88.chunk.js": "/ecard/static/js/2.f79d7c88.chunk.js",
+    "static/js/2.f79d7c88.chunk.js.map": "/ecard/static/js/2.f79d7c88.chunk.js.map",
+    "static/js/3.720ff943.chunk.js": "/ecard/static/js/3.720ff943.chunk.js",
+    "static/js/3.720ff943.chunk.js.map": "/ecard/static/js/3.720ff943.chunk.js.map",
+    "index.html": "/ecard/index.html",
+    "static/css/main.df60f3b5.chunk.css.map": "/ecard/static/css/main.df60f3b5.chunk.css.map",
+    "static/js/2.f79d7c88.chunk.js.LICENSE.txt": "/ecard/static/js/2.f79d7c88.chunk.js.LICENSE.txt",
+    "static/media/fall.a2b816c0.jpg": "/ecard/static/media/fall.a2b816c0.jpg",
+    "static/media/spring.b572d972.jpg": "/ecard/static/media/spring.b572d972.jpg",
+    "static/media/summer.cd585225.jpg": "/ecard/static/media/summer.cd585225.jpg",
+    "static/media/winter.990c5654.jpg": "/ecard/static/media/winter.990c5654.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f0886261.js",
+    "static/js/2.f79d7c88.chunk.js",
+    "static/css/main.df60f3b5.chunk.css",
+    "static/js/main.7f1e9564.chunk.js"
+  ]
+}
