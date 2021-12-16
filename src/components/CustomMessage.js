@@ -20,7 +20,6 @@ export default function CustomMessage({
   Body,
   Closing,
   setCustomImage,
-  setImageIndex,
   setGreeting,
   setBody,
   setClosing,
