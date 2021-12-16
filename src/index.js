@@ -14,7 +14,7 @@ const theme = createTheme({
       main: '#000000',
      },
      background: {
-       default: '#FFFFFF',
+       default: '#EBF9FF',
      }
   },
 });
@@ -23,6 +23,16 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <a
+        href='https://github.com/xmercado'
+        style={{
+          textDecoration: 'none',
+          color: '#c92020',
+          padding: '10px'
+        }}
+      >
+      by Xavier Mercado
+      </a>
       <App />
     </ThemeProvider>
   </React.StrictMode>,
